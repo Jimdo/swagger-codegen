@@ -38,6 +38,10 @@ String parameterToString(dynamic value) {
     return '';
   } else if (value is DateTime) {
     return value.toUtc().toIso8601String();
+  } else if (value is EnumClass) {
+    return new EnumClassTypeTransformer().encode(value).toString();
+  } else if (value is OuterEnum) {
+    return new OuterEnumTypeTransformer().encode(value).toString();
   } else {
     return value.toString();
   }

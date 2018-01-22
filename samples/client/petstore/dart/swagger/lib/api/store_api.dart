@@ -19,7 +19,7 @@ class StoreApi {
     }
 
     // create path and map variables
-    String path = "/store/order/{orderId}".replaceAll("{format}","json").replaceAll("{" + "orderId" + "}", orderId.toString());
+    String path = "/store/order/{order_id}".replaceAll("{format}","json").replaceAll("{" + "order_id" + "}", orderId.toString());
 
     // query params
     List<QueryParam> queryParams = [];
@@ -118,7 +118,7 @@ class StoreApi {
     }
 
     // create path and map variables
-    String path = "/store/order/{orderId}".replaceAll("{format}","json").replaceAll("{" + "orderId" + "}", orderId.toString());
+    String path = "/store/order/{order_id}".replaceAll("{format}","json").replaceAll("{" + "order_id" + "}", orderId.toString());
 
     // query params
     List<QueryParam> queryParams = [];

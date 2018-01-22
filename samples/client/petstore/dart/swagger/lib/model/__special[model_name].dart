@@ -1,0 +1,42 @@
+part of swagger.api;
+
+class $Special[modelName] {
+  
+  int $Special[propertyName] = null;
+  
+  $Special[modelName]();
+
+  @override
+  String toString() {
+    return '$Special[modelName][$Special[propertyName]=$$Special[propertyName], ]';
+  }
+
+  $Special[modelName].fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    $Special[propertyName] =
+    json['$Special[propertyName]'];
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      '$Special[propertyName]': $Special[propertyName]
+     };
+  }
+
+  static List<$Special[modelName]> listFromJson(List<Map<String, dynamic>> json) {
+    var list = new List<$Special[modelName]>();
+    if (json != null && json.length > 0) {
+      json.forEach((Map<String, dynamic> value) => list.add(new $Special[modelName].fromJson(value)));
+    }
+    return list;
+  }
+
+  static Map<String, $Special[modelName]> mapFromJson(Map<String, Map<String, dynamic>> json) {
+    var map = new Map<String, $Special[modelName]>();
+    if (json != null && json.length > 0) {
+      json.forEach((String key, Map<String, dynamic> value) => map[key] = new $Special[modelName].fromJson(value));
+    }
+    return map;
+  }
+}
+

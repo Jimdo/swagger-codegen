@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *http://petstore.swagger.io/v2*
+All URIs are relative to *http://petstore.swagger.io:80/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -110,7 +110,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findPetsByStatus**
-> List<Pet> findPetsByStatus(status)
+> ModelList<Pet> findPetsByStatus(status)
 
 Finds Pets by status
 
@@ -123,7 +123,7 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new PetApi();
-var status = []; // List<String> | Status values that need to be considered for filter
+var status = []; // ModelList<String> | Status values that need to be considered for filter
 
 try { 
     var result = api_instance.findPetsByStatus(status);
@@ -137,11 +137,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | [**List&lt;String&gt;**](String.md)| Status values that need to be considered for filter | 
+ **status** | [**ModelList&lt;String&gt;**](String.md)| Status values that need to be considered for filter | 
 
 ### Return type
 
-[**List<Pet>**](Pet.md)
+[**ModelList<Pet>**](Pet.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **findPetsByTags**
-> List<Pet> findPetsByTags(tags)
+> ModelList<Pet> findPetsByTags(tags)
 
 Finds Pets by tags
 
@@ -168,7 +168,7 @@ import 'package:swagger/api.dart';
 //swagger.api.Configuration.accessToken = 'YOUR_ACCESS_TOKEN';
 
 var api_instance = new PetApi();
-var tags = []; // List<String> | Tags to filter by
+var tags = []; // ModelList<String> | Tags to filter by
 
 try { 
     var result = api_instance.findPetsByTags(tags);
@@ -182,11 +182,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tags** | [**List&lt;String&gt;**](String.md)| Tags to filter by | 
+ **tags** | [**ModelList&lt;String&gt;**](String.md)| Tags to filter by | 
 
 ### Return type
 
-[**List<Pet>**](Pet.md)
+[**ModelList<Pet>**](Pet.md)
 
 ### Authorization
 

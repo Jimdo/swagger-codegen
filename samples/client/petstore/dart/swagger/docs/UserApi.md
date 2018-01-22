@@ -5,7 +5,7 @@
 import 'package:swagger/api.dart';
 ```
 
-All URIs are relative to *http://petstore.swagger.io/v2*
+All URIs are relative to *http://petstore.swagger.io:80/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ Creates list of users with given input array
 import 'package:swagger/api.dart';
 
 var api_instance = new UserApi();
-var body = [new List&lt;User&gt;()]; // List<User> | List of user object
+var body = [new ModelList&lt;User&gt;()]; // ModelList<User> | List of user object
 
 try { 
     api_instance.createUsersWithArrayInput(body);
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
+ **body** | [**ModelList&lt;User&gt;**](User.md)| List of user object | 
 
 ### Return type
 
@@ -115,7 +115,7 @@ Creates list of users with given input array
 import 'package:swagger/api.dart';
 
 var api_instance = new UserApi();
-var body = [new List&lt;User&gt;()]; // List<User> | List of user object
+var body = [new ModelList&lt;User&gt;()]; // ModelList<User> | List of user object
 
 try { 
     api_instance.createUsersWithListInput(body);
@@ -128,7 +128,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**List&lt;User&gt;**](User.md)| List of user object | 
+ **body** | [**ModelList&lt;User&gt;**](User.md)| List of user object | 
 
 ### Return type
 

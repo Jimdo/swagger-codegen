@@ -61,7 +61,7 @@ class UserApi {
   /// Creates list of users with given input array
   ///
   /// 
-  Future createUsersWithArrayInput(List<User> body) async {
+  Future createUsersWithArrayInput(ModelList<User> body) async {
     Object postBody = body;
 
     // verify required params are set
@@ -112,7 +112,7 @@ class UserApi {
   /// Creates list of users with given input array
   ///
   /// 
-  Future createUsersWithListInput(List<User> body) async {
+  Future createUsersWithListInput(ModelList<User> body) async {
     Object postBody = body;
 
     // verify required params are set

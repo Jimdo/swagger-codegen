@@ -11,10 +11,10 @@ class Pet {
   String name = null;
   
 
-  List<String> photoUrls = [];
+  ModelList<String> photoUrls = [];
   
 
-  List<Tag> tags = [];
+  ModelList<Tag> tags = [];
   
 /* pet status in the store */
   String status = null;

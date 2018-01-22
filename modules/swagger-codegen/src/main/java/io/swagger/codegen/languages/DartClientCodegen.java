@@ -56,10 +56,10 @@ public class DartClientCodegen extends DefaultCodegen implements CodegenConfig {
                 Arrays.asList(
                         "abstract", "as", "assert", "async", "async*", "await",
                         "break", "case", "catch", "class", "const", "continue",
-                        "default", "deferred", "do", "dynamic", "else", "enum",
+                        "default", "deferred", "do", "double", "dynamic", "else", "enum",
                         "export", "external", "extends", "factory", "false", "final",
-                        "finally", "for", "get", "if", "implements", "import", "in",
-                        "is", "library", "new", "null", "operator", "part", "rethrow",
+                        "finally", "float", "for", "get", "if", "implements", "import", "in",
+                        "is", "library", "list", "new", "null", "operator", "part", "rethrow",
                         "return", "set", "static", "super", "switch", "sync*", "this",
                         "throw", "true", "try", "typedef", "var", "void", "while",
                         "with", "yield", "yield*" )
@@ -261,7 +261,13 @@ public class DartClientCodegen extends DefaultCodegen implements CodegenConfig {
 
         // camelize the model name
         // phone_number => PhoneNumber
-        return camelize(name);
+        name = camelize(name);
+
+        // Classes starting with numbers are not allowed in Dart
+        if (name.matches("\\d.*")) {
+            name = "_" + name;
+        }
+        return name;
     }
 
     @Override

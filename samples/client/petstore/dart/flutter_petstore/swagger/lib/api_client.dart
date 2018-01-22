@@ -18,9 +18,11 @@ class ApiClient {
   final _RegList = new RegExp(r'^List<(.*)>$');
   final _RegMap = new RegExp(r'^Map<String,(.*)>$');
 
-  ApiClient({this.basePath: "http://petstore.swagger.io/v2"}) {
+  ApiClient({this.basePath: "http://petstore.swagger.io:80/v2"}) {
     // Setup authentications (key: authentication name, value: authentication).
     _authentications['api_key'] = new ApiKeyAuth("header", "api_key");
+    _authentications['api_key_query'] = new ApiKeyAuth("query", "api_key_query");
+    _authentications['http_basic_test'] = new HttpBasicAuth();
     _authentications['petstore_auth'] = new OAuth();
   }
 
@@ -39,18 +41,86 @@ class ApiClient {
           return value is bool ? value : '$value'.toLowerCase() == 'true';
         case 'double':
           return value is double ? value : double.parse('$value');
+        case '$Special[modelName]':
+          return new $Special[modelName].fromJson(value);
+        case 'AdditionalPropertiesClass':
+          return new AdditionalPropertiesClass.fromJson(value);
+        case 'Animal':
+          return new Animal.fromJson(value);
+        case 'AnimalFarm':
+          return new AnimalFarm.fromJson(value);
         case 'ApiResponse':
           return new ApiResponse.fromJson(value);
+        case 'ArrayOfArrayOfNumberOnly':
+          return new ArrayOfArrayOfNumberOnly.fromJson(value);
+        case 'ArrayOfNumberOnly':
+          return new ArrayOfNumberOnly.fromJson(value);
+        case 'ArrayTest':
+          return new ArrayTest.fromJson(value);
+        case 'Capitalization':
+          return new Capitalization.fromJson(value);
         case 'Category':
           return new Category.fromJson(value);
+        case 'ClassModel':
+          return new ClassModel.fromJson(value);
+        case 'Client':
+          return new Client.fromJson(value);
+        case 'EnumArrays':
+          return new EnumArrays.fromJson(value);
+        case 'EnumClass':
+          // Enclose the value in a list so that Dartson can use a transformer
+          // to decode it.
+          final listValue = [value];
+          final List<dynamic> listResult = dson.map(listValue, []);
+          return listResult[0];
+        case 'EnumTest':
+          return new EnumTest.fromJson(value);
+        case 'FormatTest':
+          return new FormatTest.fromJson(value);
+        case 'HasOnlyReadOnly':
+          return new HasOnlyReadOnly.fromJson(value);
+        case 'MapTest':
+          return new MapTest.fromJson(value);
+        case 'MixedPropertiesAndAdditionalPropertiesClass':
+          return new MixedPropertiesAndAdditionalPropertiesClass.fromJson(value);
+        case 'ModelList':
+          return new ModelList.fromJson(value);
+        case 'ModelReturn':
+          return new ModelReturn.fromJson(value);
+        case 'Name':
+          return new Name.fromJson(value);
+        case 'NumberOnly':
+          return new NumberOnly.fromJson(value);
         case 'Order':
           return new Order.fromJson(value);
+        case 'OuterBoolean':
+          return new OuterBoolean.fromJson(value);
+        case 'OuterComposite':
+          return new OuterComposite.fromJson(value);
+        case 'OuterEnum':
+          // Enclose the value in a list so that Dartson can use a transformer
+          // to decode it.
+          final listValue = [value];
+          final List<dynamic> listResult = dson.map(listValue, []);
+          return listResult[0];
+        case 'OuterNumber':
+          return new OuterNumber.fromJson(value);
+        case 'OuterString':
+          return new OuterString.fromJson(value);
         case 'Pet':
           return new Pet.fromJson(value);
+        case 'ReadOnlyFirst':
+          return new ReadOnlyFirst.fromJson(value);
         case 'Tag':
           return new Tag.fromJson(value);
         case 'User':
           return new User.fromJson(value);
+        case '_200Response':
+          return new _200Response.fromJson(value);
+        case 'Cat':
+          return new Cat.fromJson(value);
+        case 'Dog':
+          return new Dog.fromJson(value);
         default:
           {
             Match match;

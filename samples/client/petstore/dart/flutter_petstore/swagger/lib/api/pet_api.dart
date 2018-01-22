@@ -113,7 +113,7 @@ class PetApi {
   /// Finds Pets by status
   ///
   /// Multiple status values can be provided with comma separated strings
-  Future<List<Pet>> findPetsByStatus(List<String> status) async {
+  Future<ModelList<Pet>> findPetsByStatus(ModelList<String> status) async {
     Object postBody = null;
 
     // verify required params are set
@@ -157,7 +157,7 @@ class PetApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'List<Pet>') as List<Pet> ;
+      return apiClient.deserialize(response.body, 'ModelList<Pet>') as ModelList<Pet> ;
     } else {
       return null;
     }
@@ -165,7 +165,7 @@ class PetApi {
   /// Finds Pets by tags
   ///
   /// Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
-  Future<List<Pet>> findPetsByTags(List<String> tags) async {
+  Future<ModelList<Pet>> findPetsByTags(ModelList<String> tags) async {
     Object postBody = null;
 
     // verify required params are set
@@ -209,7 +209,7 @@ class PetApi {
     if(response.statusCode >= 400) {
       throw new ApiException(response.statusCode, response.body);
     } else if(response.body != null) {
-      return apiClient.deserialize(response.body, 'List<Pet>') as List<Pet> ;
+      return apiClient.deserialize(response.body, 'ModelList<Pet>') as ModelList<Pet> ;
     } else {
       return null;
     }
